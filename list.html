@@ -48,7 +48,7 @@
 
 
     addlist.onclick = function(event) {
-        preventDefault(); //to not let it refresh
+        event.preventDefault(); //to not let it refresh
 
         var z = {               //this is the variable of the data which is to be put in the array/object.
             task: inputtext.value,
