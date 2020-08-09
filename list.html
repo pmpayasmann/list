@@ -1,0 +1,77 @@
+<html>
+
+<head></head>
+
+<body>
+    <form>
+        <input type="text" id="input">
+        <input type="submit" id="add" value="add">
+        <button id="delete">delete</button>
+
+		<ul id="list">
+        	<li></li>
+        </ul>
+
+    </form>
+
+
+
+    <ul>
+
+    <script>
+    var inputtext = document.getElementById('input');
+    var deletelist = document.getElementById('delete');
+    var addlist = document.getElementById('add');
+
+
+    
+    
+    const retrieved = localStorage.getItem("retrievekey");
+    console.log(retrieved);
+
+    const todo = JSON.parse(retrieved) || [];
+
+    console.log(todo);
+
+    var x = todo.length;			// finds length of object
+	//console.log(todo[0].task);		
+
+    for(i=0; i<x; i++){				//loop for displaying tasks in console log
+
+    	console.log(todo[i].task);
+		console.log(todo[i].done);
+
+    }
+
+
+
+
+
+    addlist.onclick = function(event) {
+        preventDefault(); //to not let it refresh
+
+        var z = {               //this is the variable of the data which is to be put in the array/object.
+            task: inputtext.value,
+            done: false
+        }
+        todo.push(z);          // pushes the data into the object
+        console.log(todo);		//display's the now object with added data
+        
+
+        saveToLS(z);
+    }
+
+ //   function()
+
+  
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!--  -->
+<!-- array.splice() -->
